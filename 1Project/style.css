@@ -1,0 +1,200 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  color: #fff !important;
+  letter-spacing: 2px;
+}
+
+nav {
+  height: 6rem;
+  min-width: 100%;
+  background-color: #022b3a;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  z-index: 10;
+  padding: 1px;
+}
+
+.logo {
+  padding: 1vh 1vw;
+}
+
+.logo img {
+  height: 5rem;
+  width: 8rem;
+  object-fit: contain;
+  filter: brightness(150%);
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  color: #fff;
+  width: 88vw;
+  padding: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar li a {
+  text-decoration: none;
+  margin: 0 0.7vw;
+  font-size: 13px;
+}
+
+.navbar li a:hover {
+  color: #61dafb;
+  padding: 10px;
+  border: 1px;
+  transition-duration: 0.51s;
+}
+
+.navbar li a::after {
+  content: '';
+  width: 0;
+  height: 3px;
+  background-color: #00bcd4;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  transition: all 0.5s;
+}
+
+.navbar li a::before {
+  content: '';
+  width: 0;
+  height: 3px;
+  background-color: #f0ff;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  transition: all 0.5s;
+}
+
+.navbar li a:hover:before {
+  width: 50%;
+  transform: translateX(100%);
+}
+
+.navbar li a:hover:after {
+  width: 50%;
+  transform: translateX(-100%);
+}
+
+.login {
+  background-color: transparent;
+  border: 1.5px solid #87ceeb;
+  border-radius: 2em;
+  padding: 0.6rem 0.8rem;
+  margin-left: 2vw;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login:hover {
+  color: #000;
+  background-color: #ffa500;
+  border: 1.5px solid #f2f5f7;
+  transition: all ease-in-out;
+}
+
+.hamburger2 div {
+  width: 30px;
+  height: 3px;
+  background-color: #bfdbf7;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.hamburger2 {
+  display: none;
+}
+
+.hero {
+  background-image: url('images/blog20.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+  /*Animating Hamburger icon on click*/
+
+  .toggle .line-1 {
+    transform: rotate(45deg) translate(5px, -6px);
+  }
+
+  .toggle .line-2 {
+    transition: all 0.7s ease;
+    width: 0;
+  }
+
+  .toggle .line-3 {
+    transform: rotate(-45deg) translate(15px, -6px);
+  }
+
+
+@media screen and (max-width: 980px){
+  nav {
+    position: fixed;
+    z-index: 3;
+  }
+
+  .hamburger2 {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+  }
+
+  .navbar {
+    position: fixed;
+    background-color: #022b3a;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(50px at 90% -20%);
+    transition: all 1s cubic-bezier(0.1, 0.1, 0.2, 0.3);
+    pointer-events: none;
+  }
+
+  .hamburger2 div {
+    background-color: #fff;
+  }
+
+  .navbar.open {
+    background-color: #022b3a;
+    clip-path: circle(550px at 50% 10%);
+    width: 100%;
+    height: 100%;
+    pointer-events: all;
+  }
+
+  .navbar li {
+    opacity: 5;
+  }
+
+  li.fade {
+    opacity: 1;
+  }
+}
+
+
